@@ -1,0 +1,17 @@
+
+{{ form_start(form) }}
+<div class="row">
+    <div class="col-md-3">{{form_row(form.nom)}}</div>
+    <div>{{form_row(form.competences)}}</div>
+</div>
+<div class="row">
+    <div>{{form_row(form.description)}}</div>
+</div>
+<div class="row">
+    <div class="col-md-3">{{form_row(form.base_ATT)}}</div>
+    <div class="col-md-3">{{form_row(form.base_DEF)}}</div>
+    <div class="col-md-3">{{form_row(form.base_PV)}}</div>
+    <div class="col-md-3">{{form_row(form.base_VIT)}}</div>
+</div>
+    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}

@@ -10765,5 +10765,9 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.btn {
+  background-color: dodgerblue;
+  color: white;
+}
 
 /*# sourceMappingURL=style.css.map */

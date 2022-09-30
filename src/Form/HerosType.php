@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Heros;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class HerosType extends AbstractType
@@ -16,10 +17,7 @@ class HerosType extends AbstractType
             ->add('avatar')
             ->add('description')
             ->add('date_de_naissance')
-            ->add('ATT')
-            ->add('DEF')
-            ->add('PV')
-            ->add('VIT')
+
             ->add('niveau')
             ->add('experience')
             ->add('fonds')
@@ -29,7 +27,7 @@ class HerosType extends AbstractType
             ->add('torse')
             ->add('jambes')
             ->add('pieds')
-            ->add('armes')
+            ->add('armes',ChoiceType::class)
             ->add('monture')
         ;
     }

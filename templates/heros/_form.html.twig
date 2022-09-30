@@ -1,4 +1,19 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
+
+<div class="row">
+    <div class="col-md-3">{{form_row(form.nom)}}</div>
+    <div class="col-md-3">{{form_row(form.niveau)}}</div>
+    <div class="col-md-3">{{form_row(form.experience)}}</div>
+    <div class="col-md-3">{{form_row(form.fonds)}}</div>
+</div>
+<div class="row">
+    <div class="col-md-2">{{form_row(form.couvre_chef)}}</div>
+    <div class="col-md-2">{{form_row(form.bras)}}</div>
+    <div class="col-md-2">{{form_row(form.torse)}}</div>
+    <div class="col-md-2">{{form_row(form.jambes)}}</div>
+    <div class="col-md-2">{{form_row(form.pieds)}}</div>
+</div>
+<div class="row">
+</div>
     <button class="btn">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}

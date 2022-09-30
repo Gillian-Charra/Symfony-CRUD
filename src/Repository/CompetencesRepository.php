@@ -38,7 +38,14 @@ class CompetencesRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
-
+    public function search($nomRech){
+        return $this->createQueryBuilder('u')
+        ->where('u.nom LIKE :nomRech')
+        ->setParameter('nomRech',"%$nomRech%")
+        ->setMaxResults(15)
+        ->getQuery()
+        ->getResult();
+    }
 //    /**
 //     * @return Competences[] Returns an array of Competences objects
 //     */
