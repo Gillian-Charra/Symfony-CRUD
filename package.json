@@ -1,0 +1,15 @@
+{
+  "devDependencies": {
+    "bootstrap": "^5.2.1"
+  },
+  "scripts": {
+    "compile": "sass style.scss style.css",
+    "compile-help": "sass helpers.scss helpers.css",
+    "watch": "sass --watch public/css/style.scss public/css/style.css",
+    "watch-help": "sass --watch public/css/helpers.scss public/css/helpers.css"
+  },
+  "dependencies": {
+    "sass": "^1.55.0",
+    "scss": "^0.2.4"
+  }
+}

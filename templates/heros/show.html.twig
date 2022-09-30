@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<title>Heros</title>
+
+{% block body %}
+    <h1>Heros</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ hero.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ hero.nom }}</td>
+            </tr>
+            <tr>
+                <th>Avatar</th>
+                <td>{{ hero.avatar }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ hero.description }}</td>
+            </tr>
+            <tr>
+                <th>Date_de_naissance</th>
+                <td>{{ hero.dateDeNaissance ? hero.dateDeNaissance|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>ATT</th>
+                <td>{{ hero.ATT }}</td>
+            </tr>
+            <tr>
+                <th>DEF</th>
+                <td>{{ hero.DEF }}</td>
+            </tr>
+            <tr>
+                <th>PV</th>
+                <td>{{ hero.PV }}</td>
+            </tr>
+            <tr>
+                <th>VIT</th>
+                <td>{{ hero.VIT }}</td>
+            </tr>
+            <tr>
+                <th>Niveau</th>
+                <td>{{ hero.niveau }}</td>
+            </tr>
+            <tr>
+                <th>Experience</th>
+                <td>{{ hero.experience }}</td>
+            </tr>
+            <tr>
+                <th>Fonds</th>
+                <td>{{ hero.fonds }}</td>
+            </tr>
+            <tr>
+                <th>ATT_avec_equipement</th>
+                <td>{{ hero.ATTAvecEquipement }}</td>
+            </tr>
+            <tr>
+                <th>DEF_avec_equipement</th>
+                <td>{{ hero.DEFAvecEquipement }}</td>
+            </tr>
+            <tr>
+                <th>PV_avec_equipement</th>
+                <td>{{ hero.PVAvecEquipement }}</td>
+            </tr>
+            <tr>
+                <th>VIT_avec_equipement</th>
+                <td>{{ hero.VITAvecEquipement }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_heros_index') }}">back to list</a>
+
+    <a href="{{ path('app_heros_edit', {'id': hero.id}) }}">edit</a>
+
+    {{ include('heros/_delete_form.html.twig') }}
+{% endblock %}
