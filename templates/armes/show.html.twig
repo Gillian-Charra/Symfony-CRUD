@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Armes{% endblock %}
+
+{% block body %}
+    <h1>Armes</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ arme.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ arme.nom }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ arme.description }}</td>
+            </tr>
+            <tr>
+                <th>Flat_ATT</th>
+                <td>{{ arme.flatATT }}</td>
+            </tr>
+            <tr>
+                <th>Flat_DEF</th>
+                <td>{{ arme.flatDEF }}</td>
+            </tr>
+            <tr>
+                <th>Flat_PV</th>
+                <td>{{ arme.flatPV }}</td>
+            </tr>
+            <tr>
+                <th>Flat_VIT</th>
+                <td>{{ arme.flatVIT }}</td>
+            </tr>
+            <tr>
+                <th>Mult_ATT</th>
+                <td>{{ arme.multATT }}</td>
+            </tr>
+            <tr>
+                <th>Mult_DEF</th>
+                <td>{{ arme.multDEF }}</td>
+            </tr>
+            <tr>
+                <th>Mult_PV</th>
+                <td>{{ arme.multPV }}</td>
+            </tr>
+            <tr>
+                <th>Mult_VIT</th>
+                <td>{{ arme.multVIT }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ arme.prix }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_armes_index') }}">back to list</a>
+
+    <a href="{{ path('app_armes_edit', {'id': arme.id}) }}">edit</a>
+
+    {{ include('armes/_delete_form.html.twig') }}
+{% endblock %}

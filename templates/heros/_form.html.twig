@@ -7,6 +7,17 @@
     <div class="col-md-3">{{form_row(form.fonds)}}</div>
 </div>
 <div class="row">
+    <div class="col-md-10">{{form_row(form.description)}}</div>
+</div>
+<div class="row">
+    <div class="col-md-3">{{form_row(form.avatar)}}</div>
+    <div class="col-md-2">{{form_row(form.classe)}}</div>
+</div>
+<div class="row">
+    <div class="col-md-3">{{form_row(form.date_de_naissance)}}</div>
+</div>
+
+<div class="row">
     <div class="col-md-2">{{form_row(form.couvre_chef)}}</div>
     <div class="col-md-2">{{form_row(form.bras)}}</div>
     <div class="col-md-2">{{form_row(form.torse)}}</div>
@@ -14,6 +25,10 @@
     <div class="col-md-2">{{form_row(form.pieds)}}</div>
 </div>
 <div class="row">
+    <div class="col-md-2">{{form_row(form.armes)}}</div>
+    <div class="col-md-2">{{form_row(form.monture)}}</div>
 </div>
+
+
     <button class="btn">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}

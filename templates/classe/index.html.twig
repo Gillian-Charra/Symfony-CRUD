@@ -5,19 +5,17 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Nom</th>
-                <th>Base_ATT</th>
-                <th>Base_DEF</th>
-                <th>Base_PV</th>
-                <th>Base_VIT</th>
+                <th>ATT de base</th>
+                <th>DEF de base</th>
+                <th>PV de base</th>
+                <th>VIT de base</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
         {% for classe in classes %}
             <tr>
-                <td>{{ classe.id }}</td>
                 <td>{{ classe.nom }}</td>
                 <td>{{ classe.baseATT }}</td>
                 <td>{{ classe.baseDEF }}</td>

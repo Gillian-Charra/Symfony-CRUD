@@ -38,15 +38,31 @@ class HerosController extends AbstractController
             $PvApresEquip=$hero->getPV();
             $VitApresEquip=$hero->getVIT();
             if(null!==$hero->getArmes()){
-                $AttApresEquip=$AttApresEquip+$hero->getArmes()->getFlatATT()+$hero->getArmes()->getmultATT()*$hero->getATT();
+                $AttApresEquip=$AttApresEquip+$hero->getArmes()->getFlatATT()+($hero->getArmes()->getmultATT()/100)*$hero->getATT();
+            }
+            if(null!==$hero->getCouvreChef()){
+                $AttApresEquip=$AttApresEquip+$hero->getCouvreChef()->getFlatATT()+$hero->getCouvreChef()->getmultATT()/100*$hero->getATT();
+            }
+            if(null!==$hero->getTorse()){
+                $AttApresEquip=$AttApresEquip+$hero->getTorse()->getFlatATT()+$hero->getTorse()->getmultATT()/100*$hero->getATT();
+            }
+            if(null!==$hero->getBras()){
+                $AttApresEquip=$AttApresEquip+$hero->getBras()->getFlatATT()+$hero->getBras()->getmultATT()/100*$hero->getATT();
+            }
+            if(null!==$hero->getJambes()){
+                $AttApresEquip=$AttApresEquip+$hero->getJambes()->getFlatATT()+$hero->getJambes()->getmultATT()/100*$hero->getATT();
+            }
+            if(null!==$hero->getPieds()){
+                $AttApresEquip=$AttApresEquip+$hero->getPieds()->getFlatATT()+$hero->getPieds()->getmultATT()/100*$hero->getATT();
+            }
+            if(null!==$hero->getMonture()){
+                $AttApresEquip=$AttApresEquip+$hero->getMonture()->getFlatATT()+$hero->getMonture()->getmultATT()/100*$hero->getATT();
             }
             $hero->setATTAvecEquipement( $AttApresEquip);
             $hero->setDEFAvecEquipement($DefApresEquip);
             $hero->setPVAvecEquipement( $PvApresEquip);
             $hero->setVITAvecEquipement( $VitApresEquip);
-            
             $herosRepository->save($hero, true);
-
             return $this->redirectToRoute('app_heros_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -80,13 +96,30 @@ class HerosController extends AbstractController
             $PvApresEquip=$hero->getPV();
             $VitApresEquip=$hero->getVIT();
             if(null!==$hero->getArmes()){
-                $AttApresEquip=$AttApresEquip+$hero->getArmes()->getFlatATT()+$hero->getArmes()->getmultATT()*$hero->getATT();
+                $AttApresEquip=$AttApresEquip+$hero->getArmes()->getFlatATT()+($hero->getArmes()->getmultATT()/100)*$hero->getATT();
+            }
+            if(null!==$hero->getCouvreChef()){
+                $AttApresEquip=$AttApresEquip+$hero->getCouvreChef()->getFlatATT()+($hero->getCouvreChef()->getmultATT()/100)*$hero->getATT();
+            }
+            if(null!==$hero->getTorse()){
+                $AttApresEquip=$AttApresEquip+$hero->getTorse()->getFlatATT()+$hero->getTorse()->getmultATT()/100*$hero->getATT();
+            }
+            if(null!==$hero->getBras()){
+                $AttApresEquip=$AttApresEquip+$hero->getBras()->getFlatATT()+$hero->getBras()->getmultATT()/100*$hero->getATT();
+            }
+            if(null!==$hero->getJambes()){
+                $AttApresEquip=$AttApresEquip+$hero->getJambes()->getFlatATT()+$hero->getJambes()->getmultATT()/100*$hero->getATT();
+            }
+            if(null!==$hero->getPieds()){
+                $AttApresEquip=$AttApresEquip+$hero->getPieds()->getFlatATT()+$hero->getPieds()->getmultATT()/100*$hero->getATT();
+            }
+            if(null!==$hero->getMonture()){
+                $AttApresEquip=$AttApresEquip+$hero->getMonture()->getFlatATT()+$hero->getMonture()->getmultATT()/100*$hero->getATT();
             }
             $hero->setATTAvecEquipement( $AttApresEquip);
             $hero->setDEFAvecEquipement($DefApresEquip);
             $hero->setPVAvecEquipement( $PvApresEquip);
             $hero->setVITAvecEquipement( $VitApresEquip);
-            
             $herosRepository->save($hero, true);
 
             return $this->redirectToRoute('app_heros_index', [], Response::HTTP_SEE_OTHER);

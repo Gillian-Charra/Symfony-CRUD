@@ -3,11 +3,44 @@
     {% block head %}
         <title>New Classe</title>
         <link href="https://cdn.jsdelivr.net/npm/tom-select@2.2.1/dist/css/tom-select.css" rel="stylesheet">
-        <link href="{{ asset('css/style.css') }}" rel="stylesheet"/>
+
+        <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet"/>
         <script src="https://cdn.jsdelivr.net/npm/tom-select@2.2.1/dist/js/tom-select.complete.min.js"></script>
         <script src="{{ asset('app.js') }}" defer></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+                <link href="{{ asset('css/style.css') }}" rel="stylesheet"/>
+        <link href="{{ asset('css/helpers.css') }}" rel="stylesheet"/>
+        
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     {% endblock %}
+    <nav class="navbar navbar-default rouge">  
+    <div class="container-fluid">  
 
+        <ul class="nav navbar-nav flex-row">  
+                <a class="navbar-brand" href="./">Retour</a>  
+            <li><a href="/heros/">Heros</a></li>  
+            <li><a href="/competences/">Competences</a></li>  
+            <li><a href="/classe/">Classes</a></li> 
+            <li><a href="/Type/">Types</a></li>   
+            <li class="flex-col"> 
+              <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Objets
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li><a href="/armes/">Armes</a></li>
+                  <li><a href="/couvre-chef/">Couvre chefs</a></li>
+                  <li><a href="/torse/">Torses</a></li>              
+                  <li><a href="/bras/">Brassards</a></li>
+                  <li><a href="/jambes/">Jambes</a></li>
+                  <li><a href="/pieds/">Chaussures</a></li>
+                  <li><a href="/monture/">Montures</a></li>
+                </ul>
+              </div>
+            </li>  
+        </ul>  
+    </div>  
+    </nav>  
         <div class="content container mt-4">
         {% block body %}
         {% endblock %}

@@ -1,7 +1,11 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-    <h1>Heros</h1>
-
+<div class="entete-profil flex-row margin-bot-5">
+    <h1>{{ hero.nom }}</h1>
+			<div class="profile-image ">
+				<img class="portrait" src="{{ hero.avatar }}" alt="">
+			</div>
+</div>
     <table class="table">
         <tbody>
             <tr>
@@ -9,19 +13,11 @@
                 <td>{{ hero.id }}</td>
             </tr>
             <tr>
-                <th>Nom</th>
-                <td>{{ hero.nom }}</td>
-            </tr>
-            <tr>
-                <th>Avatar</th>
-                <td>{{ hero.avatar }}</td>
-            </tr>
-            <tr>
                 <th>Description</th>
                 <td>{{ hero.description }}</td>
             </tr>
             <tr>
-                <th>Date_de_naissance</th>
+                <th>Date de naissance</th>
                 <td>{{ hero.dateDeNaissance ? hero.dateDeNaissance|date('Y-m-d') : '' }}</td>
             </tr>
             <tr>
@@ -53,21 +49,53 @@
                 <td>{{ hero.fonds }}</td>
             </tr>
             <tr>
-                <th>ATT_avec_equipement</th>
+                <th>ATT totale</th>
                 <td>{{ hero.ATTAvecEquipement }}</td>
             </tr>
             <tr>
-                <th>DEF_avec_equipement</th>
+                <th>DEF totale</th>
                 <td>{{ hero.DEFAvecEquipement }}</td>
             </tr>
             <tr>
-                <th>PV_avec_equipement</th>
+                <th>PV totaux</th>
                 <td>{{ hero.PVAvecEquipement }}</td>
             </tr>
             <tr>
-                <th>VIT_avec_equipement</th>
+                <th>VIT totale</th>
                 <td>{{ hero.VITAvecEquipement }}</td>
             </tr>
+            <tr>
+                <th>Arme</th>
+                <td>{{ hero.armes }}</td>
+            </tr>
+             <tr>
+                <th>Casque</th>
+                <td>{{ hero.couvreChef }}</td>
+            </tr>           
+            <tr>
+                <th>Plastron</th>
+                <td>{{ hero.torse }}</td>
+            </tr>
+            <tr>
+                <th>Brassards</th>
+                <td>{{ hero.bras }}</td>
+            </tr>
+            <tr>
+                <th>Jambes</th>
+                <td>{{ hero.jambes }}</td>
+            </tr>
+            <tr>
+                <th>Chaussures</th>
+                <td>{{ hero.pieds }}</td>
+            </tr>                                                                
+            <tr>
+                <th>Monture</th>
+                <td>{{ hero.monture }}</td>
+            </tr>
+
+                
+                
+                
         </tbody>
     </table>
 

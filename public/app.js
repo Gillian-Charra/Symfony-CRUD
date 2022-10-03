@@ -35,6 +35,3 @@ function bindSelect(select){
 
 
 Array.from(document.querySelectorAll('select[multiple]')).map(bindSelect)
-
-//Bizarre
-//document.getElementsByClassName("ts-wrapper form-control multi required invalid has-options").classList.remove("form-control")

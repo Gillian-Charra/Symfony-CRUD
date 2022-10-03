@@ -5,34 +5,27 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
+                <th>Classe</th>
                 <th>Nom</th>
                 <th>Avatar</th>
                 <th>Description</th>
-                <th>Date_de_naissance</th>
+                <th>Date de naissance</th>
                 <th>Niveau</th>
                 <th>Experience</th>
                 <th>Fonds</th>
                 <th>ATT</th>
                 <th>DEF</th>
                 <th>PV</th>
-                <th>VIT</th>
-                <th>Arme</th>
-                <th>Casque</th>     
-                <th>Haut du corps</th>
-                <th>Brassards</th>
-                <th>Jambières</th>
-                <th>Chaussures</th>     
-                <th>Monture</th>                               
+                <th>VIT</th>                           
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
         {% for hero in heros %}
             <tr>
-                <td>{{ hero.id }}</td>
+                <td>{{ hero.classe }}</td>
                 <td>{{ hero.nom }}</td>
-                <td>{{ hero.avatar }}</td>
+                <td><img class="portrait" src="{{ hero.avatar }}" alt=""></td>
                 <td>{{ hero.description }}</td>
                 <td>{{ hero.dateDeNaissance ? hero.dateDeNaissance|date('Y-m-d') : '' }}</td>
                 <td>{{ hero.niveau }}</td>
@@ -42,13 +35,8 @@
                 <td>{{ hero.DEFAvecEquipement }}</td>
                 <td>{{ hero.PVAvecEquipement }}</td>
                 <td>{{ hero.VITAvecEquipement }}</td>
-                <td>{{ hero.armes }}</td>
-                <td>{{ hero.couvreChef }}</td>
-                <td>{{ hero.torse }}</td>
-                <td>{{ hero.bras }}</td>
-                <td>{{ hero.jambes }}</td>
-                <td>{{ hero.pieds }}</td>
-                <td>{{ hero.monture }}</td>
+
+
                 <td>
                     <a href="{{ path('app_heros_show', {'id': hero.id}) }}">show</a>
                     <a href="{{ path('app_heros_edit', {'id': hero.id}) }}">edit</a>
