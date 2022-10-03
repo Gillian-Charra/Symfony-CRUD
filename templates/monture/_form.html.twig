@@ -1,0 +1,22 @@
+{{ form_start(form) }}
+<div class="row">
+    <div class="col-md-4">{{form_row(form.nom)}}</div>
+    <div class="col-md-4">{{form_row(form.prix)}}</div>
+</div>
+<div class="row">
+    <div class="col-md-10">{{form_row(form.description)}}</div>
+</div>
+<div class="row">
+    <div class="col-md-3">{{form_row(form.flat_ATT)}}</div>
+    <div class="col-md-3">{{form_row(form.flat_DEF)}}</div>
+    <div class="col-md-3">{{form_row(form.flat_PV)}}</div>
+    <div class="col-md-3">{{form_row(form.flat_VIT)}}</div>
+</div>
+<div class="row">
+    <div class="col-md-3">{{form_row(form.mult_ATT)}}</div>
+    <div class="col-md-3">{{form_row(form.mult_DEF)}}</div>
+    <div class="col-md-3">{{form_row(form.mult_PV)}}</div>
+    <div class="col-md-3">{{form_row(form.mult_VIT)}}</div>
+</div>
+    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}

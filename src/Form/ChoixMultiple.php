@@ -33,6 +33,23 @@ class ChoixMultiple extends AbstractType
     {
         return 'choice';
     }
+    public function buildForm(FormBuilderInterface $builder, array $options)
+    {
+        $builder->addModelTransformer(new CallbackTransformer(
+            function (Collection $value):array{
+                $_SESSION['test']=$value->map(fn($d)=>(string)$d->getId())->toArray();
+                return $value->map(fn($d)=>(string)$d->getId())->toArray();
+            },
+            function($ids) use ($options):Collection{
+                if (empty($ids)){
+                    return new ArrayCollection([]);
+                }
+                return new ArrayCollection(
+                    $this->em->getRepository($options['class'])->findBy(['id'=>$ids])
+                );
+            },
+        ));
+    }
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
         $view->vars['expanded'] = false;
@@ -42,44 +59,13 @@ class ChoixMultiple extends AbstractType
         $view->vars['preferred_choices'] = [];
         $view->vars['choices'] =$this->choices($form->getData());
         $view->vars['choice_translation_domain'] = false;
-        $view->vars['full_name'] = 'multiple';
+        $view->vars['full_name'] .= '[]';
         $view->vars['attr']['data-remote'] = $options['search'];
-        $view->vars['attr']['name']  = "competences";
-        $_SESSION['test']=$this->choices($form->getData());
-        //var_dump($_SESSION['test']);
 
     }
     private function choices(Collection $value){
         return $value->map(fn ($d)=> new ChoiceView($d->getNom(), (string)$d->getId(), (string)$d))
         ->toArray();
 
-    }
-    public function beforeSubmit(){
-
-    }
-    public function buildForm(FormBuilderInterface $builder, array $options)
-    {
-        $builder->addModelTransformer(new CallbackTransformer(
-            function (Collection $value){
-                return $value->map(fn($d)=>(string)$d->getId())
-                ->toArray();
-
-            },
-
-            function( $ids) use ($options):Collection{
-                if (empty($ids)){
-                    var_dump($_POST);
-                    die();
-                    $ids=[];
-                    foreach ($_SESSION['test'] as $valeurs){
-                        array_push($ids,$valeurs->value);
-                    }
-                    array_push($ids,$_POST['multiple']);
-                }
-                return new ArrayCollection(
-                    $this->em->getRepository($options['class'])->findBy(['id'=>$ids])
-                );
-            },
-        ));
     }
 }
