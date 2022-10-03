@@ -39,24 +39,45 @@ class HerosController extends AbstractController
             $VitApresEquip=$hero->getVIT();
             if(null!==$hero->getArmes()){
                 $AttApresEquip=$AttApresEquip+$hero->getArmes()->getFlatATT()+($hero->getArmes()->getmultATT()/100)*$hero->getATT();
+                $DefApresEquip=$DefApresEquip+$hero->getArmes()->getFlatDEF()+($hero->getArmes()->getmultDEF()/100)*$hero->getDEF();
+                $PvApresEquip=$PvApresEquip+$hero->getArmes()->getFlatPV()+($hero->getArmes()->getmultPV()/100)*$hero->getPV();
+                $VitApresEquip=$VitApresEquip+$hero->getArmes()->getFlatVIT()+($hero->getArmes()->getmultVIT()/100)*$hero->getVIT();
             }
             if(null!==$hero->getCouvreChef()){
-                $AttApresEquip=$AttApresEquip+$hero->getCouvreChef()->getFlatATT()+$hero->getCouvreChef()->getmultATT()/100*$hero->getATT();
+                $AttApresEquip=$AttApresEquip+$hero->getCouvreChef()->getFlatATT()+($hero->getCouvreChef()->getmultATT()/100)*$hero->getATT();
+                $DefApresEquip=$DefApresEquip+$hero->getCouvreChef()->getFlatDEF()+($hero->getCouvreChef()->getmultDEF()/100)*$hero->getDEF();
+                $PvApresEquip=$PvApresEquip+$hero->getCouvreChef()->getFlatPV();
+                $VitApresEquip=$VitApresEquip+$hero->getCouvreChef()->getFlatVIT()+($hero->getCouvreChef()->getmultVIT()/100)*$hero->getVIT();
             }
             if(null!==$hero->getTorse()){
                 $AttApresEquip=$AttApresEquip+$hero->getTorse()->getFlatATT()+$hero->getTorse()->getmultATT()/100*$hero->getATT();
+                $DefApresEquip=$DefApresEquip+$hero->getTorse()->getFlatDEF()+($hero->getTorse()->getmultDEF()/100)*$hero->getDEF();
+                $PvApresEquip=$PvApresEquip+$hero->getTorse()->getFlatPV()+($hero->getTorse()->getmultPV()/100)*$hero->getPV();
+                $VitApresEquip=$VitApresEquip+$hero->getTorse()->getFlatVIT()+($hero->getTorse()->getmultVIT()/100)*$hero->getVIT();
             }
             if(null!==$hero->getBras()){
                 $AttApresEquip=$AttApresEquip+$hero->getBras()->getFlatATT()+$hero->getBras()->getmultATT()/100*$hero->getATT();
+                $DefApresEquip=$DefApresEquip+$hero->getBras()->getFlatDEF()+($hero->getBras()->getmultDEF()/100)*$hero->getDEF();
+                $PvApresEquip=$PvApresEquip+$hero->getBras()->getFlatPV()+($hero->getBras()->getmultPV()/100)*$hero->getPV();
+                $VitApresEquip=$VitApresEquip+$hero->getBras()->getFlatVIT()+($hero->getBras()->getmultVIT()/100)*$hero->getVIT();
             }
             if(null!==$hero->getJambes()){
                 $AttApresEquip=$AttApresEquip+$hero->getJambes()->getFlatATT()+$hero->getJambes()->getmultATT()/100*$hero->getATT();
+                $DefApresEquip=$DefApresEquip+$hero->getJambes()->getFlatDEF()+($hero->getJambes()->getmultDEF()/100)*$hero->getDEF();
+                $PvApresEquip=$PvApresEquip+$hero->getJambes()->getFlatPV()+($hero->getJambes()->getmultPV()/100)*$hero->getPV();
+                $VitApresEquip=$VitApresEquip+$hero->getJambes()->getFlatVIT()+($hero->getJambes()->getmultVIT()/100)*$hero->getVIT();
             }
             if(null!==$hero->getPieds()){
                 $AttApresEquip=$AttApresEquip+$hero->getPieds()->getFlatATT()+$hero->getPieds()->getmultATT()/100*$hero->getATT();
+                $DefApresEquip=$DefApresEquip+$hero->getPieds()->getFlatDEF()+($hero->getPieds()->getmultDEF()/100)*$hero->getDEF();
+                $PvApresEquip=$PvApresEquip+$hero->getPieds()->getFlatPV()+($hero->getPieds()->getmultPV()/100)*$hero->getPV();
+                $VitApresEquip=$VitApresEquip+$hero->getPieds()->getFlatVIT()+($hero->getPieds()->getmultVIT()/100)*$hero->getVIT();            
             }
             if(null!==$hero->getMonture()){
-                $AttApresEquip=$AttApresEquip+$hero->getMonture()->getFlatATT()+$hero->getMonture()->getmultATT()/100*$hero->getATT();
+                $AttApresEquip=$AttApresEquip+$hero->getPieds()->getFlatATT()+$hero->getMonture()->getmultATT()/100*$hero->getATT();
+                $DefApresEquip=$DefApresEquip+$hero->getPieds()->getFlatDEF()+($hero->getPieds()->getmultDEF()/100)*$hero->getDEF();
+                $PvApresEquip=$PvApresEquip+$hero->getPieds()->getFlatPV()+($hero->getPieds()->getmultPV()/100)*$hero->getPV();
+                $VitApresEquip=$VitApresEquip+$hero->getPieds()->getFlatVIT()+($hero->getPieds()->getmultVIT()/100)*$hero->getVIT();
             }
             $hero->setATTAvecEquipement( $AttApresEquip);
             $hero->setDEFAvecEquipement($DefApresEquip);
@@ -97,24 +118,45 @@ class HerosController extends AbstractController
             $VitApresEquip=$hero->getVIT();
             if(null!==$hero->getArmes()){
                 $AttApresEquip=$AttApresEquip+$hero->getArmes()->getFlatATT()+($hero->getArmes()->getmultATT()/100)*$hero->getATT();
+                $DefApresEquip=$DefApresEquip+$hero->getArmes()->getFlatDEF()+($hero->getArmes()->getmultDEF()/100)*$hero->getDEF();
+                $PvApresEquip=$PvApresEquip+$hero->getArmes()->getFlatPV()+($hero->getArmes()->getmultPV()/100)*$hero->getPV();
+                $VitApresEquip=$VitApresEquip+$hero->getArmes()->getFlatVIT()+($hero->getArmes()->getmultVIT()/100)*$hero->getVIT();
             }
             if(null!==$hero->getCouvreChef()){
                 $AttApresEquip=$AttApresEquip+$hero->getCouvreChef()->getFlatATT()+($hero->getCouvreChef()->getmultATT()/100)*$hero->getATT();
+                $DefApresEquip=$DefApresEquip+$hero->getCouvreChef()->getFlatDEF()+($hero->getCouvreChef()->getmultDEF()/100)*$hero->getDEF();
+                $PvApresEquip=$PvApresEquip+$hero->getCouvreChef()->getFlatPV();
+                $VitApresEquip=$VitApresEquip+$hero->getCouvreChef()->getFlatVIT()+($hero->getCouvreChef()->getmultVIT()/100)*$hero->getVIT();
             }
             if(null!==$hero->getTorse()){
                 $AttApresEquip=$AttApresEquip+$hero->getTorse()->getFlatATT()+$hero->getTorse()->getmultATT()/100*$hero->getATT();
+                $DefApresEquip=$DefApresEquip+$hero->getTorse()->getFlatDEF()+($hero->getTorse()->getmultDEF()/100)*$hero->getDEF();
+                $PvApresEquip=$PvApresEquip+$hero->getTorse()->getFlatPV()+($hero->getTorse()->getmultPV()/100)*$hero->getPV();
+                $VitApresEquip=$VitApresEquip+$hero->getTorse()->getFlatVIT()+($hero->getTorse()->getmultVIT()/100)*$hero->getVIT();
             }
             if(null!==$hero->getBras()){
                 $AttApresEquip=$AttApresEquip+$hero->getBras()->getFlatATT()+$hero->getBras()->getmultATT()/100*$hero->getATT();
+                $DefApresEquip=$DefApresEquip+$hero->getBras()->getFlatDEF()+($hero->getBras()->getmultDEF()/100)*$hero->getDEF();
+                $PvApresEquip=$PvApresEquip+$hero->getBras()->getFlatPV()+($hero->getBras()->getmultPV()/100)*$hero->getPV();
+                $VitApresEquip=$VitApresEquip+$hero->getBras()->getFlatVIT()+($hero->getBras()->getmultVIT()/100)*$hero->getVIT();
             }
             if(null!==$hero->getJambes()){
                 $AttApresEquip=$AttApresEquip+$hero->getJambes()->getFlatATT()+$hero->getJambes()->getmultATT()/100*$hero->getATT();
+                $DefApresEquip=$DefApresEquip+$hero->getJambes()->getFlatDEF()+($hero->getJambes()->getmultDEF()/100)*$hero->getDEF();
+                $PvApresEquip=$PvApresEquip+$hero->getJambes()->getFlatPV()+($hero->getJambes()->getmultPV()/100)*$hero->getPV();
+                $VitApresEquip=$VitApresEquip+$hero->getJambes()->getFlatVIT()+($hero->getJambes()->getmultVIT()/100)*$hero->getVIT();
             }
             if(null!==$hero->getPieds()){
                 $AttApresEquip=$AttApresEquip+$hero->getPieds()->getFlatATT()+$hero->getPieds()->getmultATT()/100*$hero->getATT();
+                $DefApresEquip=$DefApresEquip+$hero->getPieds()->getFlatDEF()+($hero->getPieds()->getmultDEF()/100)*$hero->getDEF();
+                $PvApresEquip=$PvApresEquip+$hero->getPieds()->getFlatPV()+($hero->getPieds()->getmultPV()/100)*$hero->getPV();
+                $VitApresEquip=$VitApresEquip+$hero->getPieds()->getFlatVIT()+($hero->getPieds()->getmultVIT()/100)*$hero->getVIT();            
             }
             if(null!==$hero->getMonture()){
-                $AttApresEquip=$AttApresEquip+$hero->getMonture()->getFlatATT()+$hero->getMonture()->getmultATT()/100*$hero->getATT();
+                $AttApresEquip=$AttApresEquip+$hero->getPieds()->getFlatATT()+$hero->getMonture()->getmultATT()/100*$hero->getATT();
+                $DefApresEquip=$DefApresEquip+$hero->getPieds()->getFlatDEF()+($hero->getPieds()->getmultDEF()/100)*$hero->getDEF();
+                $PvApresEquip=$PvApresEquip+$hero->getPieds()->getFlatPV()+($hero->getPieds()->getmultPV()/100)*$hero->getPV();
+                $VitApresEquip=$VitApresEquip+$hero->getPieds()->getFlatVIT()+($hero->getPieds()->getmultVIT()/100)*$hero->getVIT();
             }
             $hero->setATTAvecEquipement( $AttApresEquip);
             $hero->setDEFAvecEquipement($DefApresEquip);

@@ -24,6 +24,9 @@ function bindSelect(select){
         valueField:'id',
         labelField:'nom',
         searchField:'nom',
+        plugins:{
+            remove_button:{title:"Degager l'élément"}
+        },
 
         load:async(query,callback)=>{
 

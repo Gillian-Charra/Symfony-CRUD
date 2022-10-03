@@ -10,6 +10,7 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
+use testForm;
 
 class ClasseType extends AbstractType
 {
@@ -36,6 +37,7 @@ class ClasseType extends AbstractType
             ->add('competences'
             ,ChoixMultiple::class,[
                 'class'=>Competences::class,
+                'multiple'=>true,
                 'search'=>$this->url->generate('competences'),
             ])
             ->add('description')
