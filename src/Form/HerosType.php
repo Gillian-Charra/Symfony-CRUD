@@ -20,7 +20,7 @@ class HerosType extends AbstractType
                 'help'=>'Ecrire sous format:/images/avatar/image.png',
             ])
             ->add('description')
-            ->add('date_de_naissance')
+            ->add('date_de_naissance',null, ['years' => range(date('Y'), date('Y') - 100)])
             ->add('niveau')
             ->add('experience')
             ->add('fonds')
