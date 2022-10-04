@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit monture{% endblock %}
+
+{% block body %}
+    <h1>Edit monture</h1>
+
+    {{ include('monture/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_monture_index') }}">back to list</a>
+
+    {{ include('monture/_delete_form.html.twig') }}
+{% endblock %}

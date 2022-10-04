@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Bras{% endblock %}
+
+{% block body %}
+    <h1>Create new Bras</h1>
+
+    {{ include('bras/_form.html.twig') }}
+
+    <a href="{{ path('app_bras_index') }}">back to list</a>
+{% endblock %}

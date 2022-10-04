@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Bras{% endblock %}
+
+{% block body %}
+    <h1>Edit Bras</h1>
+
+    {{ include('bras/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_bras_index') }}">back to list</a>
+
+    {{ include('bras/_delete_form.html.twig') }}
+{% endblock %}

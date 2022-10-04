@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Pieds{% endblock %}
+
+{% block body %}
+    <h1>Create new Pieds</h1>
+
+    {{ include('pieds/_form.html.twig') }}
+
+    <a href="{{ path('app_pieds_index') }}">back to list</a>
+{% endblock %}

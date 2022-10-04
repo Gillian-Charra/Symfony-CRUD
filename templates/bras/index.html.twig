@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bras index{% endblock %}
+
+{% block body %}
+    <h1>Bras index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Flat_ATT</th>
+                <th>Flat_DEF</th>
+                <th>Flat_PV</th>
+                <th>Flat_VIT</th>
+                <th>Mult_ATT</th>
+                <th>Mult_DEF</th>
+                <th>Mult_PV</th>
+                <th>Mult_VIT</th>
+                <th>Prix</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for bra in bras %}
+            <tr>
+                <td>{{ bra.id }}</td>
+                <td>{{ bra.nom }}</td>
+                <td>{{ bra.description }}</td>
+                <td>{{ bra.flatATT }}</td>
+                <td>{{ bra.flatDEF }}</td>
+                <td>{{ bra.flatPV }}</td>
+                <td>{{ bra.flatVIT }}</td>
+                <td>{{ bra.multATT }}</td>
+                <td>{{ bra.multDEF }}</td>
+                <td>{{ bra.multPV }}</td>
+                <td>{{ bra.multVIT }}</td>
+                <td>{{ bra.prix }}</td>
+                <td>
+                    <a href="{{ path('app_bras_show', {'id': bra.id}) }}">show</a>
+                    <a href="{{ path('app_bras_edit', {'id': bra.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="13">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_bras_new') }}">Create new</a>
+{% endblock %}

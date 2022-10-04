@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Monture index{% endblock %}
+
+{% block body %}
+    <h1>Monture index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>ATT ajoutés</th>
+                <th>DEF ajoutés</th>
+                <th>PV ajoutés</th>
+                <th>VIT ajoutés</th>
+                <th>Multiplicateur ATT </th>
+                <th>Multiplicateur DEF</th>
+                <th>Multiplicateur PV</th>
+                <th>Multiplicateur VIT</th>
+                <th>Prix</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for monture in monture %}
+            <tr>
+                <td>{{ monture.id }}</td>
+                <td>{{ monture.nom }}</td>
+                <td>{{ monture.description }}</td>
+                <td>{{ monture.flatATT }}</td>
+                <td>{{ monture.flatDEF }}</td>
+                <td>{{ monture.flatPV }}</td>
+                <td>{{ monture.flatVIT }}</td>
+                <td>{{ monture.multATT }}</td>
+                <td>{{ monture.multDEF }}</td>
+                <td>{{ monture.multPV }}</td>
+                <td>{{ monture.multVIT }}</td>
+                <td>{{ monture.prix }}</td>
+                <td>
+                    <a href="{{ path('app_monture_show', {'id': monture.id}) }}">show</a>
+                    <a href="{{ path('app_monture_delete', {'id': monture.id}) }}">delete</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="13">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Jambes index{% endblock %}
+
+{% block body %}
+    <h1>Jambes index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Flat_ATT</th>
+                <th>Flat_DEF</th>
+                <th>Flat_PV</th>
+                <th>Flat_VIT</th>
+                <th>Mult_ATT</th>
+                <th>Mult_DEF</th>
+                <th>Mult_PV</th>
+                <th>Mult_VIT</th>
+                <th>Prix</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for jambe in jambes %}
+            <tr>
+                <td>{{ jambe.id }}</td>
+                <td>{{ jambe.nom }}</td>
+                <td>{{ jambe.description }}</td>
+                <td>{{ jambe.flatATT }}</td>
+                <td>{{ jambe.flatDEF }}</td>
+                <td>{{ jambe.flatPV }}</td>
+                <td>{{ jambe.flatVIT }}</td>
+                <td>{{ jambe.multATT }}</td>
+                <td>{{ jambe.multDEF }}</td>
+                <td>{{ jambe.multPV }}</td>
+                <td>{{ jambe.multVIT }}</td>
+                <td>{{ jambe.prix }}</td>
+                <td>
+                    <a href="{{ path('app_jambes_show', {'id': jambe.id}) }}">show</a>
+                    <a href="{{ path('app_jambes_edit', {'id': jambe.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="13">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_jambes_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Torse index{% endblock %}
+
+{% block body %}
+    <h1>Torse index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Flat_ATT</th>
+                <th>Flat_DEF</th>
+                <th>Flat_PV</th>
+                <th>Flat_VIT</th>
+                <th>Mult_ATT</th>
+                <th>Mult_DEF</th>
+                <th>Mult_PV</th>
+                <th>Mult_VIT</th>
+                <th>Prix</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for torse in torses %}
+            <tr>
+                <td>{{ torse.id }}</td>
+                <td>{{ torse.nom }}</td>
+                <td>{{ torse.description }}</td>
+                <td>{{ torse.flatATT }}</td>
+                <td>{{ torse.flatDEF }}</td>
+                <td>{{ torse.flatPV }}</td>
+                <td>{{ torse.flatVIT }}</td>
+                <td>{{ torse.multATT }}</td>
+                <td>{{ torse.multDEF }}</td>
+                <td>{{ torse.multPV }}</td>
+                <td>{{ torse.multVIT }}</td>
+                <td>{{ torse.prix }}</td>
+                <td>
+                    <a href="{{ path('app_torse_show', {'id': torse.id}) }}">show</a>
+                    <a href="{{ path('app_torse_edit', {'id': torse.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="13">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_torse_new') }}">Create new</a>
+{% endblock %}

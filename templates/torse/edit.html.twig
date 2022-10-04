@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Torse{% endblock %}
+
+{% block body %}
+    <h1>Edit Torse</h1>
+
+    {{ include('torse/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_torse_index') }}">back to list</a>
+
+    {{ include('torse/_delete_form.html.twig') }}
+{% endblock %}

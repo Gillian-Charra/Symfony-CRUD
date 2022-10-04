@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Torse{% endblock %}
+
+{% block body %}
+    <h1>Create new Torse</h1>
+
+    {{ include('torse/_form.html.twig') }}
+
+    <a href="{{ path('app_torse_index') }}">back to list</a>
+{% endblock %}

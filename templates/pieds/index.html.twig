@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Pieds index{% endblock %}
+
+{% block body %}
+    <h1>Pieds index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Flat_ATT</th>
+                <th>Flat_DEF</th>
+                <th>Flat_PV</th>
+                <th>Flat_VIT</th>
+                <th>Mult_ATT</th>
+                <th>Mult_DEF</th>
+                <th>Mult_PV</th>
+                <th>Mult_VIT</th>
+                <th>Prix</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for pied in pieds %}
+            <tr>
+                <td>{{ pied.id }}</td>
+                <td>{{ pied.nom }}</td>
+                <td>{{ pied.description }}</td>
+                <td>{{ pied.flatATT }}</td>
+                <td>{{ pied.flatDEF }}</td>
+                <td>{{ pied.flatPV }}</td>
+                <td>{{ pied.flatVIT }}</td>
+                <td>{{ pied.multATT }}</td>
+                <td>{{ pied.multDEF }}</td>
+                <td>{{ pied.multPV }}</td>
+                <td>{{ pied.multVIT }}</td>
+                <td>{{ pied.prix }}</td>
+                <td>
+                    <a href="{{ path('app_pieds_show', {'id': pied.id}) }}">show</a>
+                    <a href="{{ path('app_pieds_edit', {'id': pied.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="13">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_pieds_new') }}">Create new</a>
+{% endblock %}

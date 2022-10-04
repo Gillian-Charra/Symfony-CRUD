@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Pieds{% endblock %}
+
+{% block body %}
+    <h1>Edit Pieds</h1>
+
+    {{ include('pieds/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_pieds_index') }}">back to list</a>
+
+    {{ include('pieds/_delete_form.html.twig') }}
+{% endblock %}

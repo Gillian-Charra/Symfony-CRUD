@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Pieds{% endblock %}
+
+{% block body %}
+    <h1>Pieds</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ pied.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ pied.nom }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ pied.description }}</td>
+            </tr>
+            <tr>
+                <th>Flat_ATT</th>
+                <td>{{ pied.flatATT }}</td>
+            </tr>
+            <tr>
+                <th>Flat_DEF</th>
+                <td>{{ pied.flatDEF }}</td>
+            </tr>
+            <tr>
+                <th>Flat_PV</th>
+                <td>{{ pied.flatPV }}</td>
+            </tr>
+            <tr>
+                <th>Flat_VIT</th>
+                <td>{{ pied.flatVIT }}</td>
+            </tr>
+            <tr>
+                <th>Mult_ATT</th>
+                <td>{{ pied.multATT }}</td>
+            </tr>
+            <tr>
+                <th>Mult_DEF</th>
+                <td>{{ pied.multDEF }}</td>
+            </tr>
+            <tr>
+                <th>Mult_PV</th>
+                <td>{{ pied.multPV }}</td>
+            </tr>
+            <tr>
+                <th>Mult_VIT</th>
+                <td>{{ pied.multVIT }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ pied.prix }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_pieds_index') }}">back to list</a>
+
+    <a href="{{ path('app_pieds_edit', {'id': pied.id}) }}">edit</a>
+
+    {{ include('pieds/_delete_form.html.twig') }}
+{% endblock %}

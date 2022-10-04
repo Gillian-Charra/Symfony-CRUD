@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Monture{% endblock %}
+
+{% block body %}
+    <h1>Monture</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ monture.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ monture.nom }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ monture.description }}</td>
+            </tr>
+            <tr>
+                <th>Flat_ATT</th>
+                <td>{{ monture.flatATT }}</td>
+            </tr>
+            <tr>
+                <th>Flat_DEF</th>
+                <td>{{ monture.flatDEF }}</td>
+            </tr>
+            <tr>
+                <th>Flat_PV</th>
+                <td>{{ monture.flatPV }}</td>
+            </tr>
+            <tr>
+                <th>Flat_VIT</th>
+                <td>{{ monture.flatVIT }}</td>
+            </tr>
+            <tr>
+                <th>Mult_ATT</th>
+                <td>{{ monture.multATT }}</td>
+            </tr>
+            <tr>
+                <th>Mult_DEF</th>
+                <td>{{ monture.multDEF }}</td>
+            </tr>
+            <tr>
+                <th>Mult_PV</th>
+                <td>{{ monture.multPV }}</td>
+            </tr>
+            <tr>
+                <th>Mult_VIT</th>
+                <td>{{ monture.multVIT }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ monture.prix }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    {{ include('monture/_delete_form.html.twig') }}
+{% endblock %}
